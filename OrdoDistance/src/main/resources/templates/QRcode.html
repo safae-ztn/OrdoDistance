@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:th="http://www.thymeleaf.org" 
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+<title>QR Code</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+ <!--Nav bar-->
+    <header class="after-login">
+        <button>
+            <img src="images/logo.png" alt="logo" srcset="">
+            <h3>Ordodistance</h3>
+        </button>
+        <!------------------------------Barre de recherche-------------------------------------->
+        <div class="searching-bar">
+            <form class="">
+                <input class="" type="search" placeholder="Rechercher dans Ordodistance">
+                <button class="" type="submit">
+                    <img src="images/search.svg" width="15" height="25" alt="search">
+                </button>
+            </form>
+        </div>
+
+        <div class="doctor-info">
+            <img src="images/Doctor.jpg" alt="" srcset="" width="30" height="30">
+            <label for="">Dr.lastName</label>
+            <button>
+                <svg class="bi bi-plus" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M8 3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h3.5V4a.5.5 0 0 1 .5-.5z"/>
+                    <path fill-rule="evenodd" d="M7.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0V8z"/>
+                </svg>
+            </button>
+            <div class="dropdown">
+                <button>
+                    <svg class="bi bi-chevron-down" width="1.25em" height="1.25em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                    </svg>
+                </button>
+                <div class="dropdown-content">
+                  <a href="#">Link 1</a>
+                  <a href="#">Profile</a>
+                  <a href="#">Log out</a>
+                </div>
+              </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="prescription">
+            <div class="progress">
+                <ul>
+                    <li>
+                        <img src="images/drugs.svg" alt="" srcset="">
+                        <span>
+                            <img src="images/tick.svg" alt="" srcset="">
+                        </span>
+                        <p>Saisir l'ordonnance</p>
+                    </li>
+                    <li class="firstli">
+                        <img src="images/monitor.svg" alt="" srcset="">
+                        <span>
+                            <img src="images/tick.svg" alt="" srcset="">
+                        </span>
+                        <p>Choisir le mode d'envoie</p>
+                    </li>
+                    <li>
+                        <img src="images/sent.svg" alt="" srcset="">
+                        <span>
+                            <img src="images/tick.svg" alt="" srcset="">
+                        </span>
+                        <p>Envoyer!</p>
+                    </li>
+                </ul>
+            </div>
+            <br><br><br><br>
+      <div class="container" align="center">
+		<div class="card" style="width: 400px" align="center">
+			<img class="card-img-top" th:src="${code}" alt="QR Code"
+				style="width: 100%" />
+			<div class="card-body" align="center">
+				<a th:href="@{'/readQR?qrImage=' + ${code}}" class="btnbtn-primary">Read
+					QRCode</a>
+			</div>
+		</div>
+		<!-- <p th:text="${content}" style="color: green;"></p> -->
+	 </div>
+    	
+ </div>
+ 
+</main>
+</body>
+</html>

@@ -1,0 +1,855 @@
+/*#f22f57
+#feb42c
+#514edd
+#140846
+background-image: linear-gradient(to top, #37ecba 0%, #72afd3 100%);
+*/
+
+@font-face {
+    font-family: 'meticula';
+    src:url(../fonts/Meticula.ttf);
+    font-style:normal;
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: 'orchide';
+    src:url(../fonts/Orchide.ttf);
+    font-style:normal;
+    font-weight: 100
+}
+
+*{
+    padding:0;
+    margin:0;
+    font-family: meticula;
+    font-weight: 200;
+}
+
+header{
+    padding: 15px 70px 15px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header button,
+.prescription button,
+.login-wrap button{
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    outline: inherit;
+}
+
+header > button *{
+    padding-top: 10%;
+    display: inline;
+}
+
+header > button img{
+    width: 30px;
+    height: 30px;
+}
+
+header > button h3{
+    font-family: orchide;
+    font-size: 40px;
+    color:#132352;
+}
+
+header ul{
+    width: 580px;
+    display: flex;
+    justify-content: space-between;
+}
+
+header ul li{
+    list-style: none;
+}
+
+header ul li a {
+    position: relative;
+    text-decoration: none;
+    padding: 0px 10px 6px 10px;
+    color: #132352;
+}
+
+nav li:last-child a,
+.main-presentation a,
+.home a,
+.prescription input[type=submit],
+.wayOfSending a,
+.successfulSending-space a,
+.login-wrap button,
+.header-list a,
+.confirmOrdoButtons a{
+    border-radius: 40px;
+    color: white;
+    text-decoration: none;
+    border: none;
+    font-size: 0.9em;
+    padding: 15px;
+    margin: 0 3px;
+    cursor: pointer;
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,.30), 0 1px 3px 1px rgba(60,64,67,.15);
+}
+
+nav li:last-child a{
+    border:1px solid #20CBAF ;
+    color: #20CBAF;
+}
+
+nav li:last-child a:before{
+    background-color: transparent;
+}
+
+nav li:last-child a:hover,
+.main-presentation a:hover,
+.home a:hover,
+.prescription input[type=submit]:hover,
+.wayOfSending a:hover,
+.successfulSending-space a:hover ,
+.header-list a:hover,
+.confirmOrdoButtons a:hover{
+    background-image: none;
+    opacity: .7;
+    transition: 0.1s ease-in-out;
+}
+
+header ul li a:before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 25px;
+    height: 5%;
+    margin-left: 10px;
+    background: #20CBAF;
+    transition: 0.5s ease-in-out;
+}
+
+header ul li a:hover:before{
+    width: 75px;
+}
+/**Header after login**/
+
+/**Barre de recherche**/
+.searching-bar{
+    width: 35%;
+    height: 47px;
+    background: #efefef;
+    border-radius: 40px;
+    position: relative;
+}
+
+.searching-bar input{
+    width: 100%;
+    height: 47px;
+    border-radius: 40px;
+    border: 0;
+    background: none;
+    padding: 0 30px;
+    outline: none;
+    font-size: 15px;
+    padding-right: 60px;
+}
+
+.searching-bar button{
+    background: #a9a9a9;
+    border: 0;
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    position: absolute;
+    right: 10px;
+    top: 9px;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    transition: 0.3s linear;
+}
+
+.searching-bar button:hover{
+    opacity: 0.5;
+}
+
+.doctor-info{
+    width:19%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.doctor-info *{
+    margin: 0 2px;
+}
+
+.doctor-info img{
+    border-radius: 50%;
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,.30), 0 1px 3px 1px rgba(60,64,67,.15);
+    border: 1.5px solid #efefef;
+}
+
+.doctor-info button{
+    min-width: 30px;
+    height: 30px;
+    border-radius:50%;
+    background-color:#efefef;
+    color: #a9a9a9;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right:0;
+    background-color: #efefef;
+    min-width: 160px;
+    z-index: 1;
+}
+  
+  /* Links inside the dropdown */
+.dropdown-content a {
+    color: #132352;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+  
+  /* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+      background-color: #fff;
+}
+  
+  /* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown button:hover{
+    background-color: #ffffff;
+    color: #132352;
+}
+
+.main-content{
+    padding: 0 90px 0 90px;
+    height: 85vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #10225A;
+}
+
+.main-content > img{
+    width: 600px;
+    height: 400px;
+}
+
+.main-presentation{
+    width: 35%;
+}
+
+.main-presentation h1{
+    padding:  0 0 15px 0;
+}
+
+.main-presentation h3,
+.main-presentation span{
+    color:rgba(16, 35, 90, 0.541);
+}
+
+.main-presentation hr{
+    margin: 10px 0;
+    padding: 1px;
+    border: none;
+    background-color:#1D60DC ;
+}
+
+.main-presentation a,
+.home a,
+.prescription input[type=submit],
+.wayOfSending a {
+    margin-top: 20px;
+    display: block;
+    width: 80px;
+    text-align: center;
+    background-color:#1D60DC ;
+}
+
+/**First page**/
+.home{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home img{
+    width: 120px;
+    height: 120px;
+    margin-bottom: 3%;
+}
+
+.home h3{
+    font-size: 40px;
+}
+
+.home a{
+    width: fit-content;
+}
+
+/**PrescriptionPage**/
+.prescription{
+    width: 100%;
+    height: 100%;
+    margin-top: 80px;
+}
+
+.prescription > span{
+    font-size: 18px;
+    border-bottom: 1px solid #20CBAF;
+    color: #1D60DC;
+}
+
+.prescription form{
+    width: 100%;
+}
+
+.prescription button,
+.prescription input[type=submit],
+.wayOfSending a{
+    display: block;
+}
+
+.prescription button,
+.login-wrap button{
+    margin: 20px 0;
+    font-weight: bold;
+    font-size: 16px;
+    color:#1D60DC;
+}
+
+.prescription button *{
+    vertical-align: middle;
+}
+
+.prescription input[type=submit],
+.wayOfSending a{
+    margin:20px auto;
+}
+
+.progress{
+    margin: auto;
+}
+
+.progress li>img{
+    width: 45px;
+}
+
+ul{
+    text-align: center;
+}
+
+ul li{
+    display: inline-block;
+    width:300px;
+}
+
+ul li span{
+    position:relative;
+}
+
+ul li span img{
+    display: block;
+    width: 10px;
+    border: 2px solid #efefef;
+    background-color: #e1e1e1;
+    padding: 5px;
+    border-radius: 50%;
+    margin: 5px auto 10px auto;
+}
+
+.firstliDisabled span img{
+        background-color: #e1e1e1 !important;
+            border: 2px solid #efefef !important;
+
+
+}
+
+ul li:nth-child(1) span img,ul .thirdli span img{
+    border: 2px solid #20CBAF;
+    background-color: #1D60DC;
+}
+        
+ul li span::after{
+    content: '';
+    background: #efefef;
+    height: 5px;
+    width: 305px;
+    display: block;
+    position: relative;
+    left: 150;
+    bottom: 24px;
+    z-index: -1;
+}
+
+ul li:nth-child(1) span::after,ul .thirdli span::after{
+    background: #20CBAF;
+}
+        
+ul li:last-child span::after{
+    width: 156px;
+}
+
+ul li:first-child span::after{
+    width: 160px;
+    left: 160px;
+    top: -22.5px;
+}
+
+.firstliDisabled span::after{
+        background-color: #efefef !important;
+}
+
+.medicaments-space,
+.waysOfSending-space,
+.successfulSending-space{
+    padding: 15px 20px 15px 20px;
+    margin: 5vh auto 0 auto;
+    background-color: #f8f8f8;
+    border-radius: 30px;
+    width: 85%;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.patient-space{
+	padding-top:50px;
+	height:11vh;
+}
+
+.maladie{
+	margin:10px 0 20px 0;
+}
+
+
+
+.medicament-info{
+    display: flex;
+    justify-content: space-between;
+}
+
+.medicament-info section{
+    display: inline-block;
+}
+
+.medicament-info input,
+.maladie input,
+.login-wrap input{
+    padding: 7px;
+    border-radius: 30px;
+    border: 1px solid #a9a9a9;
+    outline: none;
+}
+
+.medicament-info input:focus,
+.login-wrap input:focus{
+    border: 1.5px solid #1D60DC;
+}
+
+.medicament-info section:nth-child(1) input{
+    width: 250px;
+}
+
+.medicament-info section:nth-child(2) input,
+.medicament-info section:nth-child(3) input{
+    width: 120px;
+}
+
+.prescription input[type=submit] {
+    width: 200px;
+    background-color: #20CBAF;
+}
+
+.prescription input[type=text],.prescription input[type=date]{
+    margin-top: 10px;
+}
+
+.prescription input[type=date]{
+    height: 14.4px;
+}
+
+.waysOfSending-space{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    max-height: 400px;
+}
+.waysOfSending-space>h3{
+    margin: 20px 35%;
+    font-size: x-large;
+
+}
+.wayOfSending{
+    width: 21%;
+    height: 40vh;
+    padding:25px;
+    background-color: #fff;
+    display: inline-block;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.wayOfSending *{
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+}
+.wayOfSending p{
+    font-size: 14px;
+    height:20px;
+}
+
+.wayOfSending .way-icon{
+    width: 50px;
+    
+}
+
+.wayOfSending a{
+    color:white;
+    font-weight: 100;
+}
+
+.successfulSending-space{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10vh 0 10vh 0;
+}
+
+.successfulSending-space *{
+    margin-top:15px ;
+}
+
+.successfulSending-space img{
+    width: 100px;
+}
+.successfulSending-space a{
+    background-color: #1D60DC;
+    margin:20px auto;
+}
+
+
+.container-login,
+.container-registration{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 72%;
+    padding: 70px;
+}
+
+.container-login>img{
+    width: 320px;
+}
+
+.login-form h1{
+    width:fit-content;
+    padding: 0 0 10px 0 ;
+    border-bottom: 5px solid #20CBAF;
+    margin-bottom:30px;
+}
+
+.login-wrap label{
+    font-size: 15px;
+    color: #999;
+}
+
+.login-wrap label b{
+    color: #10225A;
+}
+
+.login-wrap input{
+    margin:10px 0 20px 0;
+}
+
+.login-wrap button{
+	display:block;
+    font-weight: 200;
+    background-color: #20CBAF;
+    color:white;
+    margin-top:unset;
+}
+.login-wrap a{
+    display:unset;
+    background:unset;
+    color: #919191;
+    border:unset;
+    font-weight: 800;
+    box-shadow:unset;
+    padding-left:unset;
+    text-decoration: underline;
+}
+
+.login-wrap p{
+    font-size:13px;
+    color:#999;
+}
+
+.container-registration{
+	margin: auto;
+    padding-top:20px;
+    padding-bottom: 0;
+}
+
+.container-registration img{
+	width:350px;
+}
+
+.container-registration input{
+	margin: 10px 0;
+}
+
+.container-registration span{
+	font-weight:100;
+	font-size:13px;
+}
+
+.container-registration button{
+    margin: 15px 0 5 0;
+}
+@media print{
+	#ord{
+	width : 500px;
+	
+	}
+}
+
+.Patient-info{
+    display: flex;
+    justify-content: space-between;
+}
+
+.Patient-info section{
+    display: block;
+}
+
+.Patient-info input
+{
+    padding: 7px;
+    border-radius: 30px;
+    border: 1px solid #a9a9a9;
+    outline: none;
+    width: 160px;
+}
+
+.Patient-info input:focus
+{
+    border: 1.5px solid #1D60DC;
+}
+.Patient-info-email label{
+	margin-right:20px;
+}
+.Patient-info-email input[type=email]{
+	width:400px	;
+	height:20px;
+}
+.Patient-info-email{
+	display:flex;
+	justify-content:center;
+padding-bottom:30px;
+}
+.ordo-operation{
+	color:#a9a9a9
+}
+
+.ordo-operation i{
+	font-size: 15px
+}
+
+.ordo-operation:hover{
+	color:#1D60DC
+}
+
+.ordonnances-list,.ordonnance-details{
+	display:block;
+	margin:40px 0 0 0;
+}
+
+.ordonnances-table th{
+	font-weight:bold;
+	font-size:1.1em;
+}
+
+.header-list{
+	display:flex;
+	align-items:center;
+	justify-content:inherit;
+	margin:35px 0;
+}
+
+.header-list h3{
+	font-size:2em;
+	padding: 20px 0;
+	border-bottom:5px solid #20CBAF;
+}
+.ordonnance-details{
+	width:70%;
+}
+.ordonnance-details h2{
+	font-size:1.7em;
+	padding: 15px 0;
+	margin-right:73.5px;
+	/*border-bottom:5px solid #20CBAF;*/
+}
+.ordonnance-details div:nth-child(2) h2{
+		margin-right:49px;
+	
+}
+.ordonnance-details div:nth-child(3) h2{
+		margin-right:139px;
+	
+}
+
+.header-list a{
+	background-color:#20CBAF;
+}
+
+.ordonnance-details-ordo,.ordonnance-details-med,.ordonnance-details-patient{
+	margin-top:30px;
+}
+
+.ordonnance-details-ordo section{
+	margin-bottom:10px;
+	display:flex;
+	
+}
+
+.ordonnance-details-ordo label,.ordonnance-details-med h3,.ordonnance-details-patient label{
+	margin-right:10px;
+		font-weight:bold;
+		color:#1D60DC;
+}
+.ordonnance-details-med h3{
+	margin-bottom:20px;
+}
+.ordonnance-details-med p{
+	margin-bottom:10px;
+}
+.ordonnance-details-patient p{
+	display:inline;
+	
+}
+.ordonnance-details-patient section{
+	margin-bottom:10px;
+}
+
+.ordonnance-details-ordo,.ordonnance-details-med,.ordonnance-details-patient{
+	display:flex;
+}
+.ordonnance-details-ordo div,.ordonnance-details-med div,.ordonnance-details-patient div{
+	margin-top: 3%;
+    border-left: 2px solid yellowgreen;
+    padding-left: 60px;
+}
+
+.ordonnance-details{
+	position:relative;
+}
+.ordonnance-details label::before,.ordonnance-details h3::before{
+	content:"	\002022";
+	font-size:25px;
+	color:#1D60DC;
+	position:absolute;
+	left: 350px;
+	z-index:3;
+}
+.patient-details-patient label::before{
+    	left: 284px;
+
+}
+.ordonnance-details-line{
+	background-color:#20CBAF;
+	height: 58vh;
+    width: 3px;
+    position: absolute;
+    left: 343px;
+    z-index: 2;
+    top: 140px;
+}
+
+nav.breadcrumb {
+	margin: 0px 70px;
+    background-color: #fbfbfb;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0 10px 10px;
+    border-bottom:1px solid #a9a9a9;
+    font-family: meticula;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #2b2b2b;
+}
+.breadcrumb ol{
+	display:flex;
+	align-items:center;
+}
+.breadcrumb li{
+	padding:0 4px;
+}
+.breadcrumb .active{
+    color: #10225A;
+}
+.breadcrumb a,.breadcrumb li{
+	text-decoration:none;
+	display:flex;
+	align-items:center;
+	color:#2b2b2b
+}
+
+.breadcrumb i{
+	font-size:10px;
+		margin-right:4px;
+	
+}
+
+input[type=submit]:focus{
+	outline:none;
+}
+
+.confirmOrdoButtons{
+display: flex;
+    justify-content: center;
+    margin: 20px 0 50px 0;
+}
+
+.confirmOrdoButtons a{
+margin-left:15px}
+
+.confirmOrdoButtons a:nth-child(1){
+        background-color:#20CBAF
+
+}
+.confirmOrdoButtons a:nth-child(2){
+    background-color:#1f9f9f9;
+    color:#20CBAF
+
+}
+.confirmOrdoButtons a:nth-child(3){
+    background-color:#1D60DC;
+}
+
+.patient-details-patient label::before{
+    left:282px
+}

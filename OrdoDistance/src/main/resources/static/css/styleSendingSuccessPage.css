@@ -1,0 +1,12 @@
+ul li:nth-child(2) span img,
+ul li:last-child span img{
+    border: 2px solid #20CBAF;
+    background-color: #1D60DC;
+}
+
+ul li:nth-child(2) span::after,
+ul li:last-child span::after,
+ul thirdli span::after{
+    background: #20CBAF;
+}
+

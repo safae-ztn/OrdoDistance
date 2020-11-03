@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:th="http://www.thymeleaf.org" 
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Ordodistance</title>
+</head>
+
+<body>
+    <!--Nav bar-->
+    <header>
+        <button>
+            <img src="images/logo.png" alt="logo" srcset="">
+            <h3>Ordodistance</h3>
+        </button>
+        <nav>
+            <ul>
+                <li><a href="#">Acceuil</a></li>
+                <li><a href="#">A propos</a></li>
+                <li><a href="#">Nos offres</a></li>
+                <li><a th:href="@{/login}">Se connecter</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="main-presentation">
+            <h1>Ordodistance</h1>
+            <h3>Plateforme d'ordonnance éléctronique</h3>
+            <hr>
+            <span>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Id doloremque ab commodi error similique ea eum
+                explicabo inventore repellendus.
+            </span>
+            <a th:href="@{/register}">Démarrer</a>
+        </div>
+        <img src="https://i.ibb.co/QKBSX7T/health-illustration-by-hamam-zo.png" alt="health-illustration-by-hamam-zo" border="0">
+    </main>
+</body>
+
+</html>

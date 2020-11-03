@@ -1,0 +1,8 @@
+ul li:nth-child(2) span img{
+    border: 2px solid #20CBAF;
+    background-color: #1D60DC;
+}
+
+ul li:nth-child(2) span::after{
+    background: #20CBAF;
+}

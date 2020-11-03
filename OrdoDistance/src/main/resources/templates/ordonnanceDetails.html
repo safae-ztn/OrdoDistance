@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  >
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      
+      
+      <link href="css/font-awesome.min.css" rel="stylesheet" />
+      <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+        rel="stylesheet"
+        type="text/css"
+      />
+      <link th:href="@{/css/style2.css}" rel="stylesheet" />
+      <link th:href="@{/css/style.css}" rel="stylesheet" />
+      <title>Ordodistance</title>
+    </head>
+    <body>
+      <!--Nav bar-->
+      <header>
+        <button>
+          <img src="http://localhost:8080/images/logo.png" alt="logo" srcset="" />
+          <h3>Ordodistance</h3>
+        </button>
+
+        <div class="doctor-info">
+          <img
+            src="http://localhost:8080/images/Doctor.jpg"
+            alt=""
+            srcset=""
+            width="30"
+            height="30"
+          />
+          <!--<label for="">Dr.lastName</label>-->
+          <p>Dr.</p>
+          <label
+            class="username"
+            th:text="${#authentication.getPrincipal().getLastname()}"
+            >Guest</label
+          >
+          <button>
+            <svg
+              class="bi bi-plus"
+              width="1.5em"
+              height="1.5em"
+              viewBox="0 0 16 16"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8 3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h3.5V4a.5.5 0 0 1 .5-.5z"
+              />
+              <path
+                fill-rule="evenodd"
+                d="M7.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0V8z"
+              />
+            </svg>
+          </button>
+          <div class="dropdown">
+            <button>
+              <svg
+                class="bi bi-chevron-down"
+                width="1.25em"
+                height="1.25em"
+                viewBox="0 0 16 16"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+                />
+              </svg>
+            </button>
+            <div class="dropdown-content">
+              <a href="#">Profile</a>
+              <a th:href="@{/ordonnances}">Mes ordonnances</a>
+              <a th:href="@{/patients}">Mes patients</a>
+              <a th:href="@{/logout}">Log out</a>
+            </div>
+          </div>
+        </div>
+        
+        
+      </header>
+      <nav class="breadcrumb" >
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a th:href="@{/firstPage}"><i class="fas fa-home"></i> Home </a></li>
+        <li class="breadcrumb-item">/</li>
+    
+    <li class="breadcrumb-item"><a th:href="@{/ordonnances}"><i class="fas fa-list"></i> Mes Ordonnances </a></li>
+            <li class="breadcrumb-item">/</li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><i class="fas fa-info-circle"></i> Details</li>
+  </ol>
+</nav>
+
+
+      <!--  <div class="ordonnance-details-line"></div>-->
+      <main class="main-content ordonnance-details">
+      
+      <div class="ordonnance-details-ordo">
+        <h2><i class="fas fa-file-medical"></i> Ordonnance </h2>
+        <div>
+          <section>
+            <label>Date :</label>
+            <p th:text="${ordonnance.dateo}"></p>
+          </section>
+          <section>
+            <label>Maladie :</label>
+            <p th:text="${ordonnance.maladie}"></p>
+          </section>
+          <section>
+            <label>Etat de l'ordonnance :</label>
+            <th:block th:if="${ordonnance.sent == false}">
+              <p>En attente</p>
+            </th:block>
+            <th:block th:if="${ordonnance.sent == true}">
+              <p>Envoyé</p>
+            </th:block>
+          </section>
+          </div>
+        </div>
+        
+        <div
+          class="ordonnance-details-med">
+        <h2><i class="fas fa-capsules"></i> Medicaments </h2>
+
+        <div
+          style="display: flex; justify-content: space-between; width: 50%"
+        >
+          <th:block th:each="medicament:${ordonnance.medicaments}">
+            <section>
+              <h3>Medicament</h3>
+              <th:block
+                th:each="medNom:${#strings.arraySplit(medicament.nom,',')}"
+              >
+                <p th:text="${medNom}"></p>
+              </th:block>
+            </section>
+            <section>
+              <h3>Nombre de fois</h3>
+              <th:block
+                th:each="medNbrFois:${#strings.arraySplit(medicament.nbrefois,',')}"
+              >
+                <p th:text="${medNbrFois}"></p
+              ></th:block>
+            </section>
+            <section>
+              <h3>Période</h3>
+              <th:block
+                th:each="medPendant:${#strings.arraySplit(medicament.pendant,',')}"
+              >
+                <p th:text="${medPendant}"></p>
+              </th:block>
+            </section>
+          </th:block>
+          </div>
+        </div>
+<div class="ordonnance-details-patient">
+        <h2><i class="fas fa-user-injured"></i> Patient </h2>
+        <div>
+          <label for="">CIN :</label>
+          <p th:text="${ordonnance.patient.CIN}"></p>
+          <br />
+          <section></section>
+          <section>
+            <section>
+              <label for="">Nom :</label>
+              <p th:text="${ordonnance.patient.nom}"></p>
+            </section>
+            <section>
+              <label for="">Prenom :</label>
+              <p th:text="${ordonnance.patient.prenom}"></p>
+              <br />
+            </section>
+
+            <section>
+              <label for="">Date de naissance :</label>
+              <p th:text="${ordonnance.patient.dateNaissance}"></p>
+            </section>
+          </section></div>
+        </div>
+        <!-- /* <table class="table table-striped table-advance table-hover">
+          <thead class="thead-dark">
+            <tr>
+              <th>Date</th>
+              <th>Maladie</th>
+              <th>Patient</th>
+              <th>Etat de l'ordonnance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr th:each="ordonnance:${ordonnances}">
+              <td th:text="${ordonnance.dateo}"></td>
+              <td th:text="${ordonnance.Maladie}"></td>
+              <td th:text="${ordonnance.patient_id.CIN}"></td>
+              <td>
+                <th:block th:if="${ordonnance.sent == false}"
+                  >En attente</th:block
+                >
+                <th:block th:if="${ordonnance.sent == true}">Envoyée</th:block>
+              </td>
+              <td>
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                  "
+                >
+                  <a
+                    class="ordo-operation"
+                    id="editButton"
+                    th:href="@{/ordonnances/(id=${ordonnance.id})}"
+                    ><i class="far fa-edit" title="modifier"></i
+                  ></a>
+                  <a
+                    class="ordo-operation"
+                    id="detailsButton"
+                    th:href="@{/ordonnances/findById/(id=${ordonnance.id})}"
+                    ><i class="far fa-paper-plane" title="envoyer"></i
+                  ></a>
+                  <a
+                    class="ordo-operation"
+                    id="deleteButton"
+                    th:href="@{/ordonnances/delete/(id=${ordonnance.id})}"
+                    ><i class="fas fa-archive" title="archiver"></i
+                  ></a>
+
+                  <a
+                    class="ordo-operation"
+                    id="deleteButton"
+                    th:href="@{/ordonnances/delete/(id=${ordonnance.id})}"
+                    ><i class="far fa-copy" title="cloner"></i
+                  ></a>
+
+                  <a
+                    class="ordo-operation"
+                    id="deleteButton"
+                    th:href="@{/ordonnances/delete/(id=${ordonnance.id})}"
+                    ><i class="far fa-trash-alt" title="supprimer"></i
+                  ></a>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>*/ -->
+      </main>
+    </body>
+  </html>
+</html>

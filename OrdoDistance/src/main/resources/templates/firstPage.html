@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  >
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      
+      
+      <link href="css/font-awesome.min.css" rel="stylesheet" />
+      <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+        rel="stylesheet"
+        type="text/css"
+      />
+      <link th:href="@{/css/style2.css}" rel="stylesheet" />
+      <link th:href="@{/css/style.css}" rel="stylesheet" />
+      <title>Ordodistance</title>
+    </head>
+
+<body>
+    <!--Nav bar-->
+    <header class="after-login">
+        <button>
+            <img src="images/logo.png" alt="logo" srcset="">
+            <h3>Ordodistance</h3>
+        </button>
+
+        <div class="doctor-info">
+            <img src="images/Doctor.jpg" alt="" srcset="" width="30" height="30">
+            <!--<label for="">Dr.lastName</label>-->
+            <p>Dr.</p>
+            <label class="username"  th:text="${#authentication.getPrincipal().getLastname()}" >Guest</label>
+            <button>
+                <svg class="bi bi-plus" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M8 3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h3.5V4a.5.5 0 0 1 .5-.5z"/>
+                    <path fill-rule="evenodd" d="M7.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0V8z"/>
+                </svg>
+            </button>
+            <div class="dropdown">
+                <button>
+                    <svg class="bi bi-chevron-down" width="1.25em" height="1.25em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                    </svg>
+                </button>
+                <div class="dropdown-content">
+                  <a href="#">Profile</a>
+                <a th:href="@{/ordonnances}">Mes ordonnances</a>
+                <a th:href="@{/patients}">Mes patients</a>
+                    <a th:href="@{/logout}">Log out</a>
+                </div>
+              </div>
+        </div>
+    </header>
+<nav class="breadcrumb" >
+  <ol >
+    <li class="active"><a th:href="@{/firstPage}"><i class="fas fa-home"></i> Home </a></li>
+            <li style="color:transparent">/</li>
+      </ol>
+</nav>
+    <main class="main-content">
+        <div class="home">
+            <img src="images/doctor.svg" alt="" srcset="" width="30" height="30">
+            <h3>Bon retour Dr.<label class="username" th:text="${#authentication.getPrincipal().getLastname()}"> Guest <label/> </h3>
+            <a href="PatientPage">Saisir une ordonance</a>
+            <!-- <a th:href="@{/ordonnances}">Mes ordonnances</a>-->
+        </div>
+    </main>
+</body>
+
+</html>

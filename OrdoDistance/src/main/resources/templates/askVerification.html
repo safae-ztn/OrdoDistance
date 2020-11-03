@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<html
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+            rel="stylesheet"
+            type="text/css"
+    />
+    <link th:href="@{/css/style2.css}" rel="stylesheet" />
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+    <title>Ordodistance</title>
+</head>
+
+<body>
+<!--Nav bar-->
+<header class="after-login">
+    <button>
+        <img src="https://i.ibb.co/NZ279ZW/logo.png" alt="logo" srcset="">
+        <h3>Ordodistance</h3>
+    </button>
+
+
+</header>
+<main class="main-content">
+    <div class="home">
+        <h3>Bienvenue chez OrdoDistance,</h3><br><br>
+        <img src="https://i.ibb.co/1dySp9t/email.png" alt="" srcset="" width="30" height="30">
+        <p style="text-align:center;margin:auto;width:70%;font-size:20px">Un e-mail vous a été envoyé à l'adresse mail que vous avez renseigné sur le formulaire,
+        chequez-le s'il vous plait afin que vous puissiez accéder à votre espace de travail en toute sécurité
+        </p>
+        <!-- <a th:href="@{/ordonnances}">Mes ordonnances</a>-->
+    </div>
+</main>
+</body>
+
+</html>

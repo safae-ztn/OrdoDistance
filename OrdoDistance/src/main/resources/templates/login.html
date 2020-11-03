@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:th="http://www.thymeleaf.org" 
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+  <meta charset="utf-8">
+  
+  <title>Login Page </title>
+  <!-- Bootstrap CSS -->
+  
+  <link href="css/font-awesome.css" rel="stylesheet" />
+   <link href="css/style2.css" rel="stylesheet">
+      <link rel="stylesheet" href="css/style.css">
+  <link href="css/style-responsive.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!--Nav bar-->
+    <header>
+        <button>
+            <img src="https://i.ibb.co/NZ279ZW/logo.png" alt="logo" border="0">
+
+            <h3>Ordodistance</h3>
+        </button>
+        <nav>
+            <ul>
+                <li><a href="#">Acceuil</a></li>
+                <li><a href="#">A propos</a></li>
+                <li><a href="#">Nos offres</a></li>
+                <li><a href="#">S'inscrire</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+             <div class="container-login">
+    <img style="    margin-left: 80px;" src="https://i.ibb.co/NZ279ZW/logo.png" alt="logo" border="0">
+
+    <form th:action="@{/login}" method="post">
+    <div style="text-align:center; font-size:20px; color:green; font-weight:bold">  
+         <span th:utext="${message}"></span> 
+    </div>
+    <h1 style="=padding-bottom: 20px !important;
+    margin-bottom: 20px;
+    border-bottom: 5px solid #20CBAF">Connectez-vous!</h1>
+      <div class="login-wrap">
+        
+        <label for="ppt"><b>PPR</b></label>
+        <div>
+          
+          <input type="text" placeholder="PPR" name="ppt" autofocus>
+        </div>
+        
+         <label for="password"><b>Mot de passe</b></label>
+        <div >
+          <input type="password" placeholder="Mot de passe" name="password">
+        </div>
+        <label class="checkbox">
+                <input type="checkbox" value="remember-me"> Remember me
+        </label>
+        
+        <button type="submit">  Se connecter </button>
+        <p>Pas encore connécté?
+        <a th:href="@{/register}">S'inscrire</a>
+        </p>
+      </div>
+    </form>
+  </div>
+        
+    </main>
+ 
+</body>
+
+</html>

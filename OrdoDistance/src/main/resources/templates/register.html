@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:th="http://www.thymeleaf.org" 
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" href="img/favicon.png">
+
+  <title>Register New Doctor</title>
+
+  <!-- Bootstrap CSS -->
+  
+  <link href="css/font-awesome.css" rel="stylesheet" />
+  <!-- Custom styles -->
+  <link href="css/style2.css" rel="stylesheet">
+      <link rel="stylesheet" href="css/style.css">
+  <link href="css/style-responsive.css" rel="stylesheet" />
+
+</head>
+<body >
+<!--Nav bar-->
+    <header>
+        <button>
+            <img src="https://i.ibb.co/NZ279ZW/logo.png" alt="logo" srcset="">
+            <h3>Ordodistance</h3>
+        </button>
+        <nav>
+            <ul>
+                <li><a href="#">Acceuil</a></li>
+                <li><a href="#">A propos</a></li>
+                <li><a href="#">Nos offres</a></li>
+                <li><a href="/login">Se connecter</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+  <div class="container-registration">
+  
+    <form class="login-form" th:action="@{/users/addNew}" method="post">
+    
+    <h1>Inscrivez-vous!</h1>
+      <div class="login-wrap">
+       <!-- <button>
+            <img src="images/logo.png" alt="logo" srcset="">
+            <h3>Ordodistance</h3>
+        </button>-->
+        
+       <div >
+          <input type="text"  placeholder="Firstname" autofocus name="firstname">
+        </div>
+        
+        <div>
+          <input type="text" placeholder="Lastname" autofocus name="lastname">
+        </div>
+
+          <div>
+              <input type="email" placeholder="E-mail" autofocus name="email">
+          </div>
+
+          <div>
+          <input type="text" placeholder="PPR" name="ppt" autofocus>
+        </div>
+        
+        <div>
+          <input type="text" placeholder="Username" name="username" autofocus>
+        </div>
+        
+        <div>
+          <input type="password" placeholder="Password" id="password" name="password">
+        </div>
+        
+        <div>
+          <input type="password" placeholder="Confirm Password" id="confirmPassword">
+        </div>        
+        
+        <button type="submit">S'inscrire</button>
+        <label class="checkbox">
+               <span>Vous avez deja un compte?<a th:href="@{/login}"> Se connecter</a></span>
+            </label>
+      </div>
+    </form>
+    
+    <img src="images/doctor-2.svg" alt="" srcset="">
+  </div>
+  </main>
+    <!-- javascripts -->
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/register.js"></script>
+
+</body>
+</html>
